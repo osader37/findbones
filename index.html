@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img {
+			position: absolute;
+		}
+
+		.stakan { 
+			transform: rotate(180deg);
+			margin-top: 5%;
+			width: 23%
+		 }
+	</style>
+</head>
+<body>
+	<button class="reload" style="position: absolute; margin-left: 43%">RELOAD</button>
+
+	<!--<img class="bones" src="bones.png" alt="" style=" margin-left: 15%; margin-top: 33%">
+    <img class="bones" src="bones.png" alt="" style=" margin-left: 43%; margin-top: 33%">-->
+	<img class="bones" src="bones.png" alt="" style=" margin-left: 70%; margin-top: 33%; position: absolute;">
+
+	<img class="stakan" src="stak.png" style=" margin-left: 10%; ">
+	<img class="stakan" src="stak.png" style=" margin-left: 35%; ">
+	<img class="stakan" src="stak.png" style=" margin-left: 60%; ">
+
+</body>
+<script>
+	let btn = document.querySelector('reload')
+	let bones = document.querySelector('.bones')
+	let stakan = document.querySelectorAll('.stakan')		
+	let x = function(){
+		for(let i = 0; i<3;i=i+1){
+			stakan[i].style.marginTop = '350px'
+		}
+		clearInterval(interval)
+	}
+	setTimeout(x,Math.round(Math.random()*5000))
+	let array = ['70%','40%','15%']
+	let y = function(){	
+		bones.style.marginLeft = array[Math.round(Math.random()*3)]
+	}
+	let interval = setInterval(y,100)
+	for(let i = 0; i<3;i=i+1){
+	stakan[i].onclick = function(){
+		stakan[i].style.marginTop = '0px'
+		}
+	}
+</script>
+</html>
